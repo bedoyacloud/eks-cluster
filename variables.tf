@@ -1,7 +1,7 @@
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = "eks-epam"
+  default     = "eks-mvp-django"
 }
 
 variable "cluster_version" {
@@ -20,4 +20,9 @@ variable "vpc_cidr" {
   description = "Defines the CIDR block used on Amazon VPC created for Amazon EKS."
   type        = string
   default     = "10.42.0.0/16"
+}
+
+variable "aws_region" {
+  default = "us-west-2"
+  description = "aws region"
 }
