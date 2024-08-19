@@ -41,7 +41,7 @@ resource "helm_release" "nginx_ingress" {
 resource "helm_release" "django_pizza" {
   name      = "django-pizza"
   namespace = kubernetes_namespace.hello_world.metadata[0].name
-  chart     = "./django-pizza"  # Ajusta esta ruta si tu chart está en una ubicación diferente
+  chart     = "/home/ubuntu/t2/eks-cluster/django-pizza"  # Ajusta esta ruta si tu chart está en una ubicación diferente
 
   set {
     name  = "image.repository"
