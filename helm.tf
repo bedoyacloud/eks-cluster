@@ -61,7 +61,7 @@ resource "helm_release" "hello_world" {
 
   set {
     name  = "ingress.hosts[0].host"
-    value = "a7ee7531ffbd546c585399a0f093da42-586082723.us-west-2.elb.amazonaws.com "
+    value = "a7ee7531ffbd546c585399a0f093da42-586082723.us-west-2.elb.amazonaws.com"
   }
 
   set {
