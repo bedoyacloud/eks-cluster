@@ -25,12 +25,7 @@ SECRET_KEY = "django-insecure-e3&e111&%*h$#z_-$6nkn2e2ydclcxf%xdu1=$zr3v&3clrf)8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '34.215.139.176',  # IP pública del LoadBalancer
-    'a5c6c1689e0c349fb9b1c7f6ee322c45-1616351172.us-west-2.elb.amazonaws.com',  # Nombre DNS del LoadBalancer
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
