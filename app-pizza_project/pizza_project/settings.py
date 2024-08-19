@@ -32,6 +32,11 @@ ALLOWED_HOSTS = [
     'a7ee7531ffbd546c585399a0f093da42-586082723.us-west-2.elb.amazonaws.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://a7ee7531ffbd546c585399a0f093da42-586082723.us-west-2.elb.amazonaws.com',
+    # otras URLs confiables
+]
+
 
 # Application definition
 
