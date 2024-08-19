@@ -50,7 +50,7 @@ resource "helm_release" "django_pizza" {
 
   set {
     name  = "image.tag"
-    value = "v2"
+    value = "v3"
   }
 
   set {
