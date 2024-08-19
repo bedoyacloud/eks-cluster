@@ -42,7 +42,7 @@ resource "helm_release" "nginx_ingress" {
 resource "helm_release" "hello_world" {
   name      = "hello-world"
   namespace = kubernetes_namespace.hello_world.metadata[0].name
-  chart     = "./charts/hello-world"
+  chart     = "./hello-world"
 
   set {
     name  = "service.type"
