@@ -12,7 +12,6 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
-
 provider "helm" {
   kubernetes {
     host                   = data.aws_eks_cluster.cluster.endpoint
@@ -39,10 +38,20 @@ resource "helm_release" "nginx_ingress" {
   }
 }
 
-resource "helm_release" "hello_world" {
-  name      = "hello-world"
+resource "helm_release" "django_pizza" {
+  name      = "django-pizza"
   namespace = kubernetes_namespace.hello_world.metadata[0].name
-  chart     = "./hello-world"
+  chart     = "/home/ubuntu/t2/eks-cluster/django-pizza"  # Ajusta esta ruta si tu chart está en una ubicación diferente
+
+  set {
+    name  = "image.repository"
+    value = "carloscloud/django-pizza"
+  }
+
+  set {
+    name  = "image.tag"
+    value = "v3"
+  }
 
   set {
     name  = "service.type"
