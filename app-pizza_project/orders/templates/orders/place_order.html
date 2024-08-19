@@ -1,0 +1,31 @@
+<!-- orders/templates/orders/place_order.html -->
+
+<h2>Place an Order</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="pizza_type">Pizza Type:</label>
+    <select id="pizza_type" name="pizza_type">
+        <option value="Margherita">Margherita</option>
+        <option value="Pepperoni">Pepperoni</option>
+        <option value="Vegetarian">Vegetarian</option>
+    </select><br><br>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments"></textarea><br><br>
+
+    <button type="submit">Place Order</button>
+</form>
+
+<h2>Orders</h2>
+<table style="width:100%; border-collapse: collapse;">
+    <tr>
+        <th style="border: 1px solid black; padding: 8px;">Pizza Type</th>
+        <th style="border: 1px solid black; padding: 8px;">Comments</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;">{{ order.pizza_type }}</td>
+        <td style="border: 1px solid black; padding: 8px;">{{ order.comments }}</td>
+    </tr>
+    {% endfor %}
+</table>
