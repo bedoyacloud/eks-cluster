@@ -21,8 +21,3 @@ variable "vpc_cidr" {
   type        = string
   default     = "10.42.0.0/16"
 }
-
-variable "aws_region" {
-  default = "us-west-2"
-  description = "aws region"
-}
